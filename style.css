@@ -43,8 +43,8 @@ body {
 .btn {
     padding: 12px 24px;
     font-size: 1em;
-    background-color: #007bff; /* Blue color */
-    color: #fff; /* White text */
+    background-color: #007bff; 
+    color: #fff; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -52,24 +52,25 @@ body {
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Darker blue color on hover */
+    background-color: #0056b3; 
 }
 
 .btn:focus {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4); /* Add custom focus outline */
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.4); 
 }
 
 .game-screen {
-    display: block; /* Show game screen by default */
+    display: block; 
 }
 
 .result-screen {
-    display: none; /* Hide result screen by default */
+    display: none; 
     margin-top: 20px;
 }
 
 .result-message {
     font-size: 1.5em;
     margin-bottom: 10px;
+
 }
