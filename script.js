@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const O_CLASS = 'o';
     let currentPlayerClass = X_CLASS;
     let gameActive = true;
-    let boardState = ['', '', '', '', '', '', '', '', '']; // Represents each cell of the board
+    let boardState = ['', '', '', '', '', '', '', '', '']; 
 
-    // Win combinations (indexes in the boardState array)
+  
     const WINNING_COMBINATIONS = [
         [0, 1, 2],
         [3, 4, 5],
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         [2, 4, 6]
     ];
 
-    // Initialize the game board
+   
     function initializeGame() {
         boardState = ['', '', '', '', '', '', '', '', ''];
         currentPlayerClass = X_CLASS;
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderBoard();
     }
 
-    // Render the game board dynamically
+  
     function renderBoard() {
         board.innerHTML = '';
         boardState.forEach((cell, index) => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Handle cell click
+  
     function cellClick(index) {
         if (!gameActive || boardState[index] !== '') return;
 
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Check if the current player has won
+   
     function checkWin(playerClass) {
         return WINNING_COMBINATIONS.some(combination => {
             return combination.every(index => {
@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Check if the game is a draw
+  
     function isDraw() {
         return boardState.every(cell => {
             return cell !== '';
         });
     }
 
-    // End the game
+ 
     function endGame(draw) {
         gameActive = false;
         if (draw) {
@@ -95,15 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
         resultScreen.style.display = 'block';
     }
 
-    // Switch turns between X and O
+  
     function swapTurns() {
         currentPlayerClass = currentPlayerClass === X_CLASS ? O_CLASS : X_CLASS;
         message.innerText = `23Player ${currentPlayerClass === X_CLASS ? 'X' : 'O'}'s turn`;
     }
 
-    // Restart game button event listener (on result screen)
+  
     newGameBtn.addEventListener('click', initializeGame);
 
     // Initialize the game
     initializeGame();
+
 });
